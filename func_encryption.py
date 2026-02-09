@@ -1,3 +1,4 @@
+
 import random
 import string
 def fence_cipher_gen(string):
@@ -10,10 +11,7 @@ def fence_cipher_gen(string):
         if index % 2 != 0:
             yield char  
 
-def get_fn(user_input,fn):
-   reslut = "".join(fn(user_input))
-   return reslut
-    
+
 
             
 def atbash(user_input):
