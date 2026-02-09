@@ -18,6 +18,4 @@ def caesar_cipher_generator(string,num_of_shifts):
     the_encrypted_list = []
     for letter in encrypted_list:
         the_encrypted_list.append(letter)
-    return the_encrypted_list
-hello = caesar_cipher_generator("abc",2)
-print(hello)
+    return "".join(the_encrypted_list)
