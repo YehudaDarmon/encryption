@@ -1,3 +1,5 @@
+import random
+import string
 def fence_cipher_gen(string):
     
     for index, char in enumerate(string):
@@ -6,8 +8,14 @@ def fence_cipher_gen(string):
 
     for index, char in enumerate(string):
         if index % 2 != 0:
-            yield char        
+            yield char  
 
+def get_fn(user_input,fn):
+   reslut = "".join(fn(user_input))
+   return reslut
+    
+
+            
 def atbash(user_input):
     abc = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
     cba = ['z','y','x','w','v','u','t','s','r','q','p','o','n','m','l','k','j','i','h','g','f','e','d','c','b','a']
@@ -22,3 +30,20 @@ def atbash(user_input):
             index = num_1.index(letter)
             atbash_pass.append(num_2[index])
     return "".join(atbash_pass)
+
+
+def random_cipher(str):
+    index = 0
+    while index<len(str):
+        rand = string.ascii_letters + string.digits + string.punctuation
+        select = random.choice(rand)
+        yield select
+        index+=1
+
+def get_fn(user_input,fn):
+   reslut = "".join(fn(user_input))
+   return reslut
+
+
+
+
