@@ -10,27 +10,23 @@ def fence_cipher_gen(string):
         if index % 2 != 0:
             yield char  
 
+def atbash_generator(user_input):
+    abc = 'abcdefghijklmnopqrstuvwxyz'
+    cba = 'zyxwvutsrqponmlkjihgfedcba'
+    num_1 = '1234567890'
+    num_2 = '0987654321'
+
+    for char in user_input:
+        if char in abc:
+            yield cba[abc.index(char)]
+        elif char in num_1:
+            yield num_2[num_1.index(char)]
+        else:
+            yield char  
+
 def get_fn(user_input,fn):
    reslut = "".join(fn(user_input))
    return reslut
-    
-
-            
-def atbash(user_input):
-    abc = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-    cba = ['z','y','x','w','v','u','t','s','r','q','p','o','n','m','l','k','j','i','h','g','f','e','d','c','b','a']
-    num_1 = ['1','2','3','4','5','6','7','8','9','0']
-    num_2 = ['0','9','8','7','6','5','4','3','2','1']
-    atbash_pass = []
-    for letter in user_input:
-        if letter in abc:
-            index = abc.index(letter)
-            atbash_pass.append(cba[index])
-        elif letter in num_1:
-            index = num_1.index(letter)
-            atbash_pass.append(num_2[index])
-    return "".join(atbash_pass)
-
 
 def random_cipher(str):
     index = 0
@@ -43,7 +39,5 @@ def random_cipher(str):
 def get_fn(user_input,fn):
    reslut = "".join(fn(user_input))
    return reslut
-
-
 
 
